@@ -6,19 +6,26 @@ var ReadlineModule = (function(){
 
 	self.ask = function (question, callback) {
 		var r = readline.createInterface({
-	    	input: process.stdin,
-	    	output: process.stdout});
-	  		r.question(question + '\n', function(answer) {
-	  			callback(answer,r);
+			    input: process.stdin,
+			    output: process.stdout});
+	  	r.question(question + '\n', function(answer) {
+	  		callback(answer,r);
    
-  			});
-	}
+  		});
+	};
 
 	return self;
 })();
 
 var MenuModule = (function(){
    var self = {};
+
+   	self.afficherMenu = function () {
+   		console.log("1. Liste de tous les présentateurs");
+   		console.log("2. Top présentateurs");
+   		console.log("3. Liste des sessions");
+   		console.log("4. Détail d'une session");
+   	};
 
 	self.menu1 = function() {
 		console.log("Liste de tous les présentateurs");
